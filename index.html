@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Warung Mama Rasya</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+      -webkit-tap-highlight-color: transparent;
+    }
+    body {
+      margin: 0;
+      background-color: #f6f6f6;
+      color: #333;
+    }
+    header {
+      background: linear-gradient(135deg, #2e7d32, #1b5e20);
+      color: white;
+      padding: 18px 15px;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 20px;
+    }
+    header p {
+      margin: 4px 0 0;
+      font-size: 13px;
+    }
+    nav {
+      display: none;
+    }
+    .container {
+      padding: 15px;
+    }
+    .hero {
+      background: url('https://images.unsplash.com/photo-1542838132-92c53300491e') center/cover;
+      height: 180px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-shadow: 1px 1px 5px black;
+      font-size: 20px;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    h2 {
+      color: #2e7d32;
+      font-size: 18px;
+      margin: 25px 0 10px;
+    }
+    p {
+      font-size: 14px;
+      line-height: 1.6;
+    }
+    .produk {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 15px;
+    }
+    .card {
+      background: white;
+      border-radius: 14px;
+      padding: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    .card img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+    .card h3 {
+      margin: 10px 0 5px;
+      font-size: 16px;
+    }
+    .card p {
+      font-size: 13px;
+      margin: 0 0 10px;
+    }
+    .card button {
+      padding: 12px;
+      width: 100%;
+      background: #2e7d32;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      font-size: 15px;
+      font-weight: bold;
+    }
+    .maps iframe {
+      width: 100%;
+      height: 260px;
+      border-radius: 12px;
+      border: none;
+    }
+    footer {
+      background: #1b5e20;
+      color: white;
+      text-align: center;
+      padding: 12px;
+      font-size: 13px;
+      margin-bottom: 70px;
+    }
+    .bottom-bar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: white;
+      display: flex;
+      justify-content: space-around;
+      border-top: 1px solid #ddd;
+      height: 60px;
+      z-index: 1000;
+    }
+    .bottom-bar button {
+      flex: 1;
+      border: none;
+      background: none;
+      font-size: 13px;
+      font-weight: bold;
+      color: #2e7d32;
+    }
+    .cta {
+      position: fixed;
+      bottom: 70px;
+      left: 15px;
+      right: 15px;
+      background: #25D366;
+      color: white;
+      padding: 14px;
+      border-radius: 14px;
+      text-align: center;
+      font-size: 16px;
+      font-weight: bold;
+      text-decoration: none;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Warung Mama Rasya</h1>
+  <p>Warung Sayur & Toko Kelontong Lengkap</p>
+</header>
+
+<nav>
+  <a href="#beranda">Beranda</a>
+  <a href="#produk">Produk</a>
+  <a href="#lokasi">Lokasi</a>
+  <a href="#kontak">Kontak</a>
+</nav>
+
+<div class="container" id="beranda">
+  <div class="hero">
+    Segar • Lengkap • Terjangkau
+  </div>
+
+  <h2>Tentang Kami</h2>
+  <p>
+    Warung Mama Rasya menyediakan berbagai macam sayuran segar, bumbu dapur, 
+    serta kebutuhan sembako harian. Melayani pembelian langsung dan pemesanan 
+    melalui WhatsApp.
+  </p>
+
+  <h2 id="produk">Produk Unggulan</h2>
+  <div class="produk">
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1518843875459-f738682238a6" />
+      <h3>Sayur Segar</h3>
+      <p>Bayam, kangkung, sawi, wortel, dll.</p>
+      <button onclick="pesan('Sayur Segar')">Pesan</button>
+    </div>
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1604908176997-125f25cc6f3d" />
+      <h3>Bumbu Masakan</h3>
+      <p>Bawang, cabai, rempah-rempah.</p>
+      <button onclick="pesan('Bumbu Masakan')">Pesan</button>
+    </div>
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1587049352851-8d4e89133924" />
+      <h3>Sembako</h3>
+      <p>Beras, minyak, gula, telur, mie.</p>
+      <button onclick="pesan('Sembako')">Pesan</button>
+    </div>
+  </div>
+
+  <h2 id="lokasi">Lokasi Kami</h2>
+  <p>Pondok Cituis Indah, Jl. Hiu No.56 Blok F, Surya Bahari, Pakuhaji, Tangerang, Banten</p>
+  <div class="maps">
+    <iframe 
+      src="https://www.google.com/maps?q=Pondok+Cituis+Indah+Jl.+Hiu+No.56+Blok+F+Pakuhaji+Tangerang+Banten&output=embed">
+    </iframe>
+  </div>
+
+  <h2 id="kontak">Kontak & Pemesanan</h2>
+  <p>
+    WhatsApp: <strong>0812-8969-3708 (Mama Rasya)</strong><br>
+    Jam Buka: Setiap Hari
+  </p>
+</div>
+
+<footer>
+  <p>&copy; 2026 Warung Mama Rasya. All Rights Reserved.</p>
+</footer>
+
+<a class="wa-float" href="https://wa.me/6281289693708" target="_blank">Pesan WhatsApp</a>
+
+<script>
+  function pesan(produk) {
+    const nomor = '6281289693708';
+    const pesan = `Halo Mama Rasya, saya ingin memesan ${produk}.`;
+    const url = `https://wa.me/${nomor}?text=${encodeURIComponent(pesan)}`;
+    window.open(url, '_blank');
+  }
+</script>
+
+</body>
+</html>
